@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+  <title>DİZİLER</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-primary">
+    <div class="container">
+      <h3><a class="navbar-brand" href="index.html">Diziler</a></h3>
+      <h5 class="text-light">Dizi - Metin Dönüşümleri</h5>
+    </div>
+  </nav>
+
+  <div class="container main-container">
+    <div class="card">
+      <h2>Dizilerin metinlere dönüştürülmesi - 1.Yöntem</h2>
+      <p><code>dizi.toString();</code></p>
+      <p><em>Diziyi aralarına virgül koyarak metne dönüştürür.</em></p>
+      <p><button class="btn btn-outline-warning" type="button" id="btnConvert1"><i class="fas fa-exchange-alt"></i></button></p>
+      <p>
+        <b>Şehirler:</b> <span id="cities1"></span>
+      </p>
+
+    </div>
+
+
+    <div class="card">
+      <h2>Dizilerin metinlere dönüştürülmesi - 2.Yöntem</h2>
+      <p><code>dizi.join('*');</code></p>
+      <p><em>Diziyi aralarına istenilen karakter koyarak metne dönüştürür</em></p>
+      <p><button class="btn btn-outline-warning" type="button" id="btnConvert2"><i class="fas fa-exchange-alt"></i></button></p>
+      <p>
+        <b>Şehirler:</b> <span id="cities2"></span>
+      </p>
+
+    </div>
+
+
+    <div class="card">
+      <h2>Metinlerin dizilere dönüştürülmesi</h2>
+      <p><code>dizi.split();</code></p>
+      <p><em>Metinleri, belli bir seperatöre göre diziye çevirir.</em></p>
+      <p>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Şehir isimlerini aralarına ; işareti koyarak giriniz" name="txtCity">
+          <button class="btn btn-outline-primary" type="button" id="btnConvert3"><i class="fas fa-exchange-alt"></i></button>
+        </div>
+        <b>Şehirler:</b> <span id="cities3"></span>
+      </p>
+
+    </div>
+
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    var dizi = ['İstanbul', 'İzmir', 'Sinop', 'Ankara', 'Sivas', 'Tunceli', 'Artvin'];
+
+    
+    
+  </script>
+</body>
+
+</html>

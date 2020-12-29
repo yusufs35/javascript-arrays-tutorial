@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+  <title>DİZİLER</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-primary">
+    <div class="container">
+      <h3><a class="navbar-brand" href="index.html">Diziler</a></h3>
+      <h5 class="text-light">Arama</h5>
+    </div>
+  </nav>
+
+  <div class="container main-container">
+    <div class="card">
+      <h2>includes</h2>
+      <p><code>dizi.includes('eleman')</code></p>
+      <p><em>Diziyi arar, istenilen elemanı bulursa true, değile false dönderir.</em> </p>
+      <p>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Şehir ismi giriniz" name="txtCity1">
+          <button class="btn btn-outline-secondary" type="button" id="btnFindItem1"><i class="fas fa-search"></i></button>
+        </div>
+      </p>
+      <p>
+      <span id="item1"></span>
+      </p>
+    </div>
+
+
+
+    <div class="card">
+      <h2>indexOf</h2>
+      <p><code>dizi.indexOf('eleman')</code></p>
+      <p><em>Diziyi arar ve varsa istenilen şartlara uygun ilk bulunan elemanın pozisyonunu dönderir.</em> </p>
+      <p>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Şehir ismi giriniz" name="txtCity2">
+          <button class="btn btn-outline-secondary" type="button" id="btnFindItem2"><i class="fas fa-search"></i></button>
+        </div>
+      </p>
+      <p>
+      <span id="item2"></span>
+      </p>
+    </div>
+
+
+    <div class="card">
+      <h2>lastIndexOf</h2>
+      <p><code>dizi.lastIndexOf('eleman')</code></p>
+      <p><em>Diziyi arar ve varsa istenilen şartlara uygun son bulunan elemanın pozisyonunu dönderir.</em> </p>
+      <p>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Şehir ismi giriniz" name="txtCity3">
+          <button class="btn btn-outline-secondary" type="button" id="btnFindItem3"><i class="fas fa-search"></i></button>
+        </div>
+      </p>
+      <p>
+      <span id="item3"></span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>find</h2>
+      <p><code>dizi.find(function(value, index, array) { });</code></p>
+      <p><em>Testi geçen ilk elemanın değerini verir</em> </p>
+      <p>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Şehir ismi giriniz" name="txtCity4">
+          <button class="btn btn-outline-secondary" type="button" id="btnFindItem4"><i class="fas fa-search"></i></button>
+        </div>
+      </p>
+      <p>
+      <span id="item4"></span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>findIndex</h2>
+      <p><code>dizi.findIndex(function(value, index, array) { });</code></p>
+      <p><em>Testi geçen ilk elemanın index değerini verir</em> </p>
+      <p>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Şehir ismi giriniz" name="txtCity5">
+          <button class="btn btn-outline-secondary" type="button" id="btnFindItem5"><i class="fas fa-search"></i></button>
+        </div>
+      </p>
+      <p>
+      <span id="item5"></span>
+      </p>
+    </div>
+
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    var cities = ['İstanbul', 'İzmir', 'Sinop', 'Ankara', 'Sivas', 'Van', 'Artvin'];
+
+
+    
+
+  </script>
+</body>
+
+</html>

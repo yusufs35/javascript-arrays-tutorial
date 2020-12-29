@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+  <title>DİZİLER</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-primary">
+    <div class="container">
+      <h3><a class="navbar-brand" href="index.html">Diziler</a></h3>
+      <h5 class="text-light">Sıralama ve Tersine Çevirme</h5>
+    </div>
+  </nav>
+
+  <div class="container main-container">
+    <div class="card">
+      <h2>Sıralama ve Tersine Çevirme</h2>
+      <p>Sıralama için <code>dizi.sort()</code>, tersine çevirmek için <code>dizi.reverse()</code></code></p>
+
+      <div class="row">
+        <div class="col-md-6">
+          <select class="form-control" name="lstSortField">
+              <option value="isim">İsme göre</option>
+              <option value="nufus">Nüfusa göre</option>
+          </select>
+        </div>
+        <div class="col-md-5">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="rdSortType" id="rdToHigh" value="artan" checked>
+            <label class="form-check-label" for="rdToHigh">Artan</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="rdSortType" id="rdToLow" value="azalan">
+            <label class="form-check-label" for="rdToLow">Azalan</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-2">
+        <div class="col-12">
+          <select class="form-control" size="7" name="lstCities">
+
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+
+    var cities = [{
+        name: 'İstanbul',
+        population: 15000000
+      },
+      {
+        name: 'Ankara',
+        population: 9000000
+      },
+      {
+        name: 'İzmir',
+        population: 6000000
+      },      
+      {
+        name: 'Aydın',
+        population: 300000
+      },
+      {
+        name: 'Erzurum',
+        population: 1500000
+      },
+      {
+        name: 'Artvin',
+        population: 280000
+      }
+    ];
+  
+
+  </script>
+</body>
+
+</html>

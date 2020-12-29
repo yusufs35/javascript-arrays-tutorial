@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+  <title>DİZİLER</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-primary">
+    <div class="container">
+      <h3><a class="navbar-brand" href="index.html">DİZİLER</a></h3>
+      <h5 class="text-light">Eleman Silme</h5>
+    </div>
+  </nav>
+
+  <div class="container main-container">
+    <div class="card">
+      <h2>1.Yöntem</h2>
+      <p><code>dizi.pop(eleman); // ['İstanbul', 'İzmir', 'Sinop', 'Ankara', 'Sivas', 'Tunceli', 'Artvin']</code></p>
+      <p><em>Dizinin sonundaki ilk elemanı siler.</em></p>
+      <p><button class="btn btn-outline-danger" type="button" id="btnDeleteCity1"><i class="fas fa-times"></i></button></p>
+
+      <p>
+        <b>Şehirler:</b> <span id="cities1"></span>
+      </p>
+
+    </div>
+
+
+    <div class="card">
+      <h2>2.Yöntem</h2>
+      <p><code>dizi.shift(eleman); // ['İstanbul', 'İzmir', 'Sinop', 'Ankara', 'Sivas', 'Tunceli', 'Artvin']</code></p>
+      <p><em>Dizinin başındaki ilk elemanı siler.</em></p>
+      <p><button class="btn btn-outline-danger" type="button" id="btnDeleteCity2"><i class="fas fa-times"></i></button></p>
+      <p>
+        <b>Şehirler:</b> <span id="cities2"></span>
+      </p>
+
+    </div>
+
+    <div class="card">
+      <h2>3.Yöntem</h2>
+      <p><code>dizi.splice(pozisyon, silinecek_eleman_sayisi); //['İstanbul', 'İzmir', 'Sinop', 'Ankara', 'Sivas', 'Tunceli', 'Artvin'] </code></p>
+      <p><em>İstenilen pozisyondan itibaren istenilen sayıda eleman silinir</em></p>
+      <p><button class="btn btn-outline-danger" type="button" id="btnDeleteCity3"><i class="fas fa-times"></i></button></p>
+      <p>
+        <b>Şehirler:</b> <span id="cities3"></span>
+      </p>
+
+    </div>
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    var dizi = ['İstanbul', 'İzmir', 'Sinop', 'Ankara', 'Sivas', 'Tunceli', 'Artvin'];
+
+   
+
+  </script>
+</body>
+
+</html>

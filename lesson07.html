@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+  <title>DİZİLER</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-primary">
+    <div class="container">
+      <h3><a class="navbar-brand" href="index.html">Diziler</a></h3>
+      <h5 class="text-light">Iteration (Döngüler)</h5>
+    </div>
+  </nav>
+
+  <div class="container main-container">
+    <div class="card">
+      <h2>For Loop</h2>
+      <p><code>for(var i=0; i&lt;dizi.length; i++){ }</code></p>
+      <p>
+        <button id="btnCalculateTotalScore" class="btn btn-primary">Hesapla</button>
+        <b>Toplam Atılan Gol:</b> <span id="totalPoint"></span>
+      </p>
+    </div>
+
+
+    <div class="card">
+      <h2>forEach</h2>
+      <p><code>dizi.forEach(eleman){ }</code></p>
+      <p><em>Dizi elemanlarını sırayla eleman değişkenine atarak döndürür.</em></p>
+      <p>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Takım isimlerini aralarına virgül koyarak giriniz" name="txtClubs">
+          <button class="btn btn-outline-primary" type="button" id="btnAddClub"><i class="fas fa-plus"></i></button>
+        </div>
+        <select class="form-control" size="5" name="lstClubs1">
+
+        </select>
+      </p>
+    </div>
+
+
+    <div class="card">
+      <h2>map</h2>
+      <p><code>dizi.map(function(eleman){ });</code></p>
+      <p><em>Her bir eleman üzerinde bir işlem gerçekleştirerek yeni bir dizi oluşturur. Değeri olmayan elemanlar için bir işlem yapmaz. Orjinal diziyi değiştirmez.</em></p>
+      <p>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">%</span>
+          <input type="number" class="form-control" placeholder="Gelir artış miktarı giriniz" name="txtIncome">
+          <button class="btn btn-outline-primary" type="button" id="btnUpdateIncome"><i class="fas fa-save"></i></button>
+        </div>
+        <select class="form-control" size="5" name="lstClubs2">
+
+        </select>
+      </p>
+    </div>
+
+
+    <div class="card">
+      <h2>filter</h2>
+      <p><code>dizi.filter(function(eleman){ });</code></p>
+      <p><em>Testi geçen elemanlardan yeni bir dizi oluşturur.</em></p>
+      <p>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Takım ismi giriniz" name="txtClub">
+        </div>
+        <select class="form-control" size="5" name="lstClubs3">
+
+        </select>
+      </p>
+    </div>
+
+
+    <div class="card">
+      <h2>every</h2>
+      <p><code>dizi.every(function(eleman){ });</code></p>
+      <p><em>Tüm elemanların testi geçip geçmediğini belirler. Tüm elemanlar testi geçerse true, değilse false dönderir</em></p>
+      <p>
+        <div class="input-group mb-3">
+          <button class="btn btn-outline-primary" type="button" id="btnSearch1">Tüm takımların en az 1 beraberliği var mı?</button>
+        </div>
+        <div id="rslt1">
+
+        </div>
+      </p>
+    </div>
+
+
+    <div class="card">
+      <h2>some</h2>
+      <p><code>dizi.some(function(eleman){ });</code></p>
+      <p><em>En az 1 eleman testi geçiyorsa true, değilse false dönderir.</em></p>
+      <p>
+        <div class="input-group mb-3">
+          <button class="btn btn-outline-primary" type="button" id="btnSearch2">Averajı negatif olan kulüp var mı?</button>
+        </div>
+        <div id="rslt2">
+
+        </div>
+      </p>
+    </div>
+
+
+
+
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    var takimlar = [
+      {adi:'Alanyaspor', mac:13, kazandigi: 8, kaybettigi: 3, attigi: 22, yedigi:8, gelir: 4500},
+      {adi:'Galatasaray', mac:12, kazandigi: 7, kaybettigi: 3, attigi: 20, yedigi:9, gelir: 15000},
+      {adi:'Fenerbahçe', mac:13, kazandigi: 7, kaybettigi: 4, attigi: 23, yedigi:19, gelir: 13000},
+      {adi:'Beşiktaş', mac:12, kazandigi: 7, kaybettigi: 5, attigi: 25, yedigi:19, gelir: 15600},
+      {adi:'Gaziantep', mac:12, kazandigi: 5, kaybettigi: 1, attigi: 12, yedigi:15, gelir: 3500}
+    ];
+
+
+
+  </script>
+</body>
+
+</html>

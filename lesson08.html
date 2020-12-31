@@ -87,6 +87,54 @@
       }
     ];
   
+    var lstSortField = document.querySelector('select[name="lstSortField"]');
+    
+
+    lstSortField.addEventListener('change', function(){
+          sortByField(lstSortField.value);
+    });
+
+
+    document.querySelectorAll('input[name="rdSortType"]').forEach(function(radio){
+          radio.addEventListener('change', function(){
+               sortByField(lstSortField.value);
+          });
+    });
+
+
+    sortByField(lstSortField.value);
+
+    function sortByField(sortField){
+          var rdSortType = document.querySelector('input[name="rdSortType"]:checked');
+
+          cities.sort(function(a,b){
+               if(sortField == 'isim'){
+                    return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
+               }
+               else{
+                    return a.population - b.population;
+               }
+          });
+
+          if(rdSortType.value == 'azalan') cities.reverse();
+
+          loadList();
+    }
+
+
+
+    function loadList(){
+          var lstCities = document.querySelector('select[name="lstCities"]');
+
+          lstCities.innerHTML='';
+
+          cities.forEach(function(city){
+               lstCities.insertAdjacentHTML('beforeend','<option>' + city.name + ' ' + city.population + '</option>');
+          });
+    }
+
+
+    
 
   </script>
 </body>

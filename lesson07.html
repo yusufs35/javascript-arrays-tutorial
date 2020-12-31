@@ -39,12 +39,11 @@
       <p><em>Dizi elemanlarını sırayla eleman değişkenine atarak döndürür.</em></p>
       <p>
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Takım isimlerini aralarına virgül koyarak giriniz" name="txtClubs">
           <button class="btn btn-outline-primary" type="button" id="btnAddClub"><i class="fas fa-plus"></i></button>
         </div>
-        <select class="form-control" size="5" name="lstClubs1">
-
-        </select>
+        <div id="lstClubs1" class="d-flex justify-content-center flex-wrap">
+               
+        </div>
       </p>
     </div>
 
@@ -74,10 +73,10 @@
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Takım ismi giriniz" name="txtClub">
         </div>
-        <select class="form-control" size="5" name="lstClubs3">
-
-        </select>
-      </p>
+          <div id="lstClubs3" class="d-flex justify-content-center flex-wrap">
+               
+          </div>
+     </p>
     </div>
 
 
@@ -120,12 +119,120 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   <script type="text/javascript">
     var takimlar = [
-          {id:'234245245223', adi:'Galatasaray', mac:14, kazandigi: 9, kaybettigi: 3, attigi: 25, yedigi:10, gelir: 15000},
+          {id:'234245245223', adi:'Galatasaray', mac:14, kazandigi: 9, kaybettigi: 3, attigi: 25, yedigi:30, gelir: 15000},
           {id:'456234112368', adi:'Beşiktaş', mac:14, kazandigi: 9, kaybettigi: 4, attigi: 29, yedigi:19, gelir: 15600},
           {id:'234213423434', adi:'Alanyaspor', mac:15, kazandigi: 8, kaybettigi: 4, attigi: 24, yedigi:12, gelir: 4500},
           {id:'673455567786', adi:'Gaziantep', mac:14, kazandigi: 7, kaybettigi: 1, attigi: 27, yedigi:16, gelir: 3500},
           {id:'567348478431', adi:'Fenerbahçe', mac:14, kazandigi: 8, kaybettigi: 4, attigi: 27, yedigi:20, gelir: 13000}
     ];
+
+    document.getElementById('btnCalculateTotalScore').onclick = function(){
+         var toplam = 0;
+         for(var i=0; i<takimlar.length; i++){
+               toplam += takimlar[i].attigi;
+         }
+
+         document.getElementById('totalPoint').innerText = toplam;
+    }
+
+
+    document.getElementById('btnAddClub').onclick = function(){
+          var lstClubs1 = document.getElementById('lstClubs1');
+
+          takimlar.forEach(function(takim){
+               var puan = takim.kazandigi * 3 + (takim.mac - takim.kazandigi - takim.kaybettigi);
+               var takimHtml = '<div class="card" style="width: 12rem;">' +
+               '    <img src="img/' + takim.id + '.png" class="card-img-top">'+
+               '    <div class="card-body">'+
+               '    <h5 class="card-title">' + takim.adi + '</h5>'+
+               '    <p class="card-text">Puan: ' + puan + '</p>'+
+               '    </div>'+
+               '    </div>';
+               
+               lstClubs1.insertAdjacentHTML('beforeend', takimHtml);
+
+          });
+    }  
+
+
+    document.getElementById('btnUpdateIncome').onclick = function(){
+
+          var txtIncome = document.querySelector('input[name="txtIncome"]');
+          var lstClubs2 = document.querySelector('select[name="lstClubs2"]');
+
+          var yeni_dizi = [];
+          var artisMiktari = parseInt(txtIncome.value);
+
+
+          yeni_dizi = takimlar.map(function(takim){
+               
+               var yeni_gelir = takim.gelir + takim.gelir * artisMiktari / 100;
+
+               return takim.adi + ":" + yeni_gelir;
+               
+          });
+
+          yeni_dizi.forEach(function(takim){
+               lstClubs2.insertAdjacentHTML('beforeend', '<option>' + takim + '</option>');   
+          });
+
+
+    }  
+
+
+    document.querySelector('input[name="txtClub"]').oninput = function(){
+          var txtClub = document.querySelector('input[name="txtClub"]');
+          var lstClubs3 = document.querySelector('#lstClubs3');
+
+
+
+          var yeni = takimlar.filter(function(takim){
+               if(takim.adi.toLowerCase().includes(txtClub.value.toLowerCase())){
+                    return takim;
+               }
+          });
+
+          lstClubs3.innerText='';
+
+          yeni.forEach(function(takim){
+               var puan = takim.kazandigi * 3 + (takim.mac - takim.kazandigi - takim.kaybettigi);
+               var takimHtml = '<div class="card" style="width: 12rem;">' +
+               '    <img src="img/' + takim.id + '.png" class="card-img-top">'+
+               '    <div class="card-body">'+
+               '    <h5 class="card-title">' + takim.adi + '</h5>'+
+               '    <p class="card-text">Puan: ' + puan + '</p>'+
+               '    </div>'+
+               '    </div>';
+               
+               lstClubs3.insertAdjacentHTML('beforeend', takimHtml);
+
+          });
+    }  
+
+    
+    document.getElementById('btnSearch1').onclick = function(){
+          var rslt1 = document.getElementById('rslt1');
+
+          var sonuc = takimlar.every(function(takim){
+               return (takim.mac - takim.kazandigi - takim.kaybettigi) > 0;
+          });
+
+          rslt1.innerText = sonuc ? "Evet" : "Hayır";
+
+    }
+    
+    document.getElementById('btnSearch2').onclick = function(){
+          var rslt2 = document.getElementById('rslt2');
+
+          var sonuc = takimlar.some(function(takim){
+               return takim.attigi<takim.yedigi;
+          });
+
+          rslt2.innerText = sonuc ? "Evet" : "Hayır";
+
+    }
+    
+    
 
 
   </script>

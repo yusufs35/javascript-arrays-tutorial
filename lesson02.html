@@ -49,7 +49,15 @@
   
   <script type="text/javascript">
     var sehirler = ['İstanbul', 'İzmir', 'Ankara', 'Bursa', 'Diyarbakır', 'Erzurum'];
+
+    document.getElementById('city1').innerText = sehirler[2];
     
+     document.getElementById('btnChange').onclick = function(){
+          sehirler[2] = 'Artvin';
+          document.getElementById('cities').innerText = sehirler;
+     }
+
+
   </script>
 </body>
 

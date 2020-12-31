@@ -67,9 +67,28 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   <script type="text/javascript">
+    
     var dizi = ['İstanbul', 'İzmir', 'Sinop', 'Ankara', 'Sivas', 'Tunceli', 'Artvin'];
 
-    
+    document.getElementById('btnConvert1').onclick=function(){
+          var text = dizi.toString();
+          text = text.toUpperCase();
+          document.getElementById('cities1').innerText = text;
+    }
+
+    document.getElementById('btnConvert2').onclick=function(){
+          var text = dizi.join('-');
+          text = text.toLowerCase();
+          document.getElementById('cities2').innerText = text;
+    }
+
+    document.getElementById('btnConvert3').onclick=function(){
+          var sehirler = document.querySelector('input[name="txtCity"]');
+          var dizi2 = sehirler.value.split(';');
+          console.log(dizi2);
+          document.getElementById('cities3').innerText = dizi2;
+    }
+
     
   </script>
 </body>

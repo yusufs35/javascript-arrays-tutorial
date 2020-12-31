@@ -109,8 +109,86 @@
   <script type="text/javascript">
     var cities = ['İstanbul', 'İzmir', 'Sinop', 'Ankara', 'Sivas', 'Van', 'Artvin'];
 
+     document.getElementById('btnFindItem1').onclick = function(){
+          var sehir = document.querySelector('input[name="txtCity1"]');
+          var sonuc = document.getElementById('item1');
 
-    
+          var bulundu = cities.includes(sehir.value);
+
+          sonuc.innerText = sehir.value;
+
+          if(bulundu){
+               sonuc.innerText += " bulundu";
+          }
+          else{
+               sonuc.innerText += " bulunamadı";
+          }
+
+     }
+
+ 
+     document.getElementById('btnFindItem2').onclick = function(){
+          var sehir = document.querySelector('input[name="txtCity2"]');
+          var sonuc = document.getElementById('item2');
+
+          var index = cities.indexOf(sehir.value);
+
+          sonuc.innerText = sehir.value;
+
+          if(index>-1){
+               sonuc.innerText += " " + index + ". sırada bulundu";
+          }
+          else{
+               sonuc.innerText += " bulunamadı";
+          }
+
+     }
+
+     document.getElementById('btnFindItem3').onclick = function(){
+          var sehir = document.querySelector('input[name="txtCity3"]');
+          var sonuc = document.getElementById('item3');
+
+          var index = cities.lastIndexOf(sehir.value);
+
+          sonuc.innerText = sehir.value;
+
+          if(index>-1){
+               sonuc.innerText += " " + index + ". sırada bulundu";
+          }
+          else{
+               sonuc.innerText += " bulunamadı";
+          }
+
+     }
+
+
+     document.getElementById('btnFindItem4').onclick = function(){
+          var sehirInput = document.querySelector('input[name="txtCity4"]');
+          var sonuc = document.getElementById('item4');
+
+          var sonuc_sehir = cities.find(function(sehir){
+               return sehir.toLocaleLowerCase('tr') == sehirInput.value.toLocaleLowerCase('tr');
+          });
+
+          sonuc.innerText = sonuc_sehir;
+
+     }
+
+
+     document.getElementById('btnFindItem5').onclick = function(){
+          var sehirInput = document.querySelector('input[name="txtCity5"]');
+          var sonuc = document.getElementById('item5');
+
+          var sonuc_sehir = cities.findIndex(function(sehir){
+               return sehir.toLocaleLowerCase('tr') == sehirInput.value.toLocaleLowerCase('tr');
+          });
+
+          sonuc.innerText = sonuc_sehir;
+
+     }
+
+
+
 
   </script>
 </body>

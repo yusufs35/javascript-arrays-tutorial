@@ -90,6 +90,49 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   <script type="text/javascript">
     
+    var sehirler = [];
+
+    document.getElementById('btnAddCity1').onclick = function(){
+         var sehir = document.querySelector('input[name="txtCity1"]');
+          sehirler.push(sehir.value);
+          sehir.value='';
+          sehir.focus();
+
+          document.getElementById('cities1').innerText = sehirler;
+    }
+
+    document.getElementById('btnAddCity2').onclick = function(){
+         var sehir = document.querySelector('input[name="txtCity2"]');
+          sehirler.unshift(sehir.value);
+          sehir.value='';
+          sehir.focus();
+
+          document.getElementById('cities2').innerText = sehirler;
+    }
+
+
+    document.getElementById('btnAddCity3').onclick = function(){
+         var sehir = document.querySelector('input[name="txtCity3"]');
+          sehirler[sehirler.length] = sehir.value;
+          sehir.value='';
+          sehir.focus();
+
+          document.getElementById('cities3').innerText = sehirler;
+    }
+
+    document.getElementById('btnAddCity4').onclick = function(){
+         var sehir = document.querySelector('input[name="txtCity4"]');
+          
+        // sehirler.splice(2,0, sehir.value);
+          sehirler.splice(2,0, sehir.value, 'Ağrı','Sivas');
+
+          sehir.value='';
+          sehir.focus();
+
+          document.getElementById('cities4').innerText = sehirler;
+    }
+
+
 
 
   </script>
